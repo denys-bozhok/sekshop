@@ -1,8 +1,6 @@
 <div class="section__wrapper">
     {%for section in need_section%}
     <div class="section">
-
-
         <div class="banner_category">
             <img 
                 class="sections-icon" 
@@ -25,7 +23,7 @@
     {% for cat in categories_of_sextion_arr %}
     <div class="category__container">
         <div class="category-title">
-            {{cat.title}}
+            <a href="/category/{{cat.slug}}">{{cat.title}}</a>
         </div>    
 
         <div class="category-img">

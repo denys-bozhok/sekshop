@@ -85,9 +85,16 @@ main {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.product__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .product-container{
     display: flex;
     justify-content: space-between;
+    background: white;
+    border-radius: 2rem;
 }
 
 .product{
@@ -95,6 +102,7 @@ main {
 }
 .product-icon {
     height: 20rem;
+    border-radius: 2rem;
 }
 
 
