@@ -1,33 +1,33 @@
-<div class="best__wrapper">
-{% for product in products%}
+{% for el in need_product%}
     <div class="product">
         <div>
             <div class="product-container">
                 <img
                 class="product-icon" 
-                src="../../../../media/{{product.image}}" 
+                src="../../../../media/{{el.image}}" 
                 alt="Not image"
                 >
                 
                 <div>
                     <div class="product_label">
-                        {{product.label}}
+                        {{el.label}}
                     </div>
 
                     <div class="product_rating">
-                        {{product.rating}}
+                        {{el.rating}}
                     </div>
 
                     <div class="product_price">
-                        {{product.price}}
+                        {{el.price}}
                     </div>
 
-                    <a href="../product/{{product.slug}}">BUY</a>
+                    <button>BUY</button>
                 </div>
-
             </div>
-
+            
+            <div class="product_description">
+                {{el.description}}
+            </div>
         </div>
     </div>
 {% endfor%}
-</div>
