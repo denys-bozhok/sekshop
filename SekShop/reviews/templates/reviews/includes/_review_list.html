@@ -1,0 +1,32 @@
+
+
+
+<div class="review__user_name">
+    Reviews of ouer shop
+</div>
+
+<div class="reviews__wrapper">
+    <div class="review_list">
+        {% for review in random_reviews_list%}
+        <div class="review">
+            <div class="review__user_name">{{review.user_name}}</div>
+            <div class="review__rating">{{review.rating}}</div>
+            <div class="review__txt">{{review.review_txt}}</div>
+            <div class="review__tags">{{review.tags}}</div>
+        </div>
+        {% endfor%}
+    </div>
+
+    <div>
+        <div class="review_buttons">
+            <a class="review_button" href="reviews/get_review/">
+                Get review for ouer shop
+            </a>
+
+            <a class="review_button" href="reviews/">
+                See all reviews
+            </a>
+        </div>
+    </div>
+    
+</div>

@@ -8,12 +8,13 @@
 
 {% block style %}
     <link rel="stylesheet" href="{% static 'app/app.css' %}">
+    <link rel="stylesheet" href="{% static 'reviews/reviews.css' %}">
 {% endblock style %}
 
 <!--* BODY -->
 
 {% block header %}
-    {% include 'app/includes/_header.html' %}
+    {% include 'includes/_header.html' %}
 {% endblock header %}   
 
 {% block main %}
@@ -23,10 +24,11 @@
         {% include 'app/includes/_categories.html' %}
         {% include 'app/includes/_corusel.html' %}
         {% include 'app/includes/_best.html' %}
+        {% include 'reviews/includes/_review_list.html' %}
         </div>
     </main> 
 {% endblock main %}
 
 {% block footer %}
-{% include 'app/includes/_footer.html' %}
+{% include 'includes/_footer.html' %}
 {% endblock footer %}

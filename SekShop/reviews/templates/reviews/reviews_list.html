@@ -1,0 +1,47 @@
+{% extends '_base.html'%}
+{% load static %}
+
+<!--* HEAD -->
+{% block title %}
+SekShop
+{% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'app/app.css' %}">
+<link rel="stylesheet" href="{% static 'reviews/reviews.css' %}">
+{% endblock style %}
+
+<!--* BODY -->
+
+{% block header %}
+{% include 'includes/_header.html' %}
+{% endblock header %}
+
+
+{% block main %}
+{% include 'app/includes/_banner.html' %}
+<main class="main">
+    <div class="content">
+        <div class="best_review">
+            {{review.user_name}}
+        </div>
+        
+        <div class="review_list">
+            {% for review in reviews%}
+
+            <div class="review">
+                <div class="review__user_name">{{review.user_name}}</div>
+                <div class="review__rating">{{review.rating}}</div>
+                <div class="review__txt">{{review.review_txt}}</div>
+                <div class="review__tags">{{review.tags}}</div>
+            </div>
+
+            {% endfor%}
+        </div>
+    </div>
+</main>
+{% endblock main %}
+
+{% block footer %}
+{% include 'includes/_footer.html' %}
+{% endblock footer %}
