@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.views.generic.edit import FormView
 from django.views.generic import TemplateView
 from django.views.generic import ListView
+from django.views.generic import View
 from django.views.generic.detail import DetailView
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.db import models
 
 from app.models import Section
@@ -38,7 +39,17 @@ class ReviewList(ListView):
     context_object_name = "reviews"
     
     
+    
 class ReviewSingleView(ListView):
-    template_name = 'reviews/review.html'
     model = Review
-    context_object_name = "review"
+    
+    def get(self, request, **kwargs):
+        review = Review.objects.all()
+        pk = kwargs.get('pk')
+        
+        return render(request, 'reviews/review.html', {
+            "pk": pk,
+            "review": review
+        })
+
+
