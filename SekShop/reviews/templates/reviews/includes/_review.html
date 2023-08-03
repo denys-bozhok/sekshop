@@ -1,0 +1,21 @@
+{% for rev in review %}
+    {% if rev.id == 10%}
+    <ul class="review">
+            <li class="review__user_name">
+                {{rev.user_name}}
+            </li>
+
+            <li class="review__rating">
+                {{rev.rating}}
+            </li>
+
+            <li class="review__review_txt">
+                {{rev.review_txt}}
+            </li>
+
+            <li class="review__tags">
+                {{rev.tags}}
+            </li>
+    </ul>
+    {% endif%}
+{% endfor%}

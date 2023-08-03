@@ -3,30 +3,69 @@
 
 <!--* HEAD -->
 {% block title %}
-    SekShop
+SekShop
 {% endblock title %}
 
 {% block style %}
-    <link rel="stylesheet" href="{% static 'app/app.css' %}">
+<link rel="stylesheet" href="{% static 'app/app.css' %}">
+<link rel="stylesheet" href="{% static 'reviews/reviews.css' %}">
 {% endblock style %}
 
 <!--* BODY -->
 
 {% block header %}
-    {% include 'app/includes/_header.html' %}
-{% endblock header %}   
+{% include 'includes/_header.html' %}
+{% endblock header %}
 
 {% block main %}
 {% include 'app/includes/_banner.html' %}
-    <main class="main">   
-        <div class="content">
+<main class="main">
+    <div class="content">
         {% include 'app/includes/_categories.html' %}
         {% include 'app/includes/_corusel.html' %}
         {% include 'app/includes/_best.html' %}
+
+        <div class="review__user_name">
+            Reviews of ouer shop
         </div>
-    </main> 
+        
+        <div class="reviews__wrapper">
+            {% for review in random_reviews_list %}
+            <ul class="review">
+                    <li class="review__user_name">
+                        <a href="reviews/{{review.id}}">{{review.user_name}}</a>
+                    </li>
+            
+                    <li class="review__rating">
+                        {{review.rating}}
+                    </li>
+            
+                    <li class="review__review_txt">
+                        {{review.review_txt}}
+                    </li>
+            
+                    <li class="review__tags">
+                        {{review.tags}}
+                    </li>
+            </ul>
+            {% endfor%}
+            </div>
+            
+            <div>
+                <div class="review_buttons">
+                    <a class="review_button" href="../reviews/get_review/">
+                        Get review for ouer shop
+                    </a>
+        
+                    <a class="review_button" href="../reviews/">
+                        See all reviews
+                    </a>
+                </div>
+            </div>
+    </div>
+</main>
 {% endblock main %}
 
 {% block footer %}
-{% include 'app/includes/_footer.html' %}
+{% include 'includes/_footer.html' %}
 {% endblock footer %}

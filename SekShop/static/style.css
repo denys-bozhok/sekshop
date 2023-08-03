@@ -17,11 +17,18 @@ li {
     list-style-type: none;
 }
 
+main{
+    display: flex;
+    justify-content: center;
+}
+
 #app {
     width: 100%;
     background: rgba(32, 32, 32, 0.867);
     min-height: 100vh;
 }
+
+
 
 .header {
     background: linear-gradient(to right, rgba(139, 0, 139, 0.872) 1%, rgba(0, 0, 0, 0.935)  7% 93%,  darkmagenta 99%);

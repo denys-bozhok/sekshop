@@ -1,1 +1,29 @@
-hello
+{% extends '_base.html'%}
+{% load static %}
+
+<!--* HEAD -->
+{% block title %}
+    Category
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'app/app.css' %}">
+{% endblock style %}
+
+<!--* BODY -->
+
+{% block header %}
+    {% include 'includes/_header.html' %}
+{% endblock header %}   
+
+{% block main %}
+    <main class="main">   
+        <div class="content">
+        {% include 'app/includes/_products.html' %}
+        </div>
+    </main> 
+{% endblock main %}
+
+{% block footer %}
+{% include 'includes/_footer.html' %}
+{% endblock footer %}

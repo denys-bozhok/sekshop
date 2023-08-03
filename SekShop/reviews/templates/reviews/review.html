@@ -3,25 +3,24 @@
 
 <!--* HEAD -->
 {% block title %}
-    Sections
+Review
 {% endblock title %}
 
 {% block style %}
-    <link rel="stylesheet" href="{% static 'app/app.css' %}">
+<link rel="stylesheet" href="{% static 'app/app.css' %}">
+<link rel="stylesheet" href="{% static 'reviews/reviews.css' %}">
 {% endblock style %}
 
 <!--* BODY -->
 
 {% block header %}
     {% include 'includes/_header.html' %}
-{% endblock header %}   
+    {% include 'app/includes/_banner.html' %}
+{% endblock header %}
+
 
 {% block main %}
-    <main class="main">   
-        <div class="content">
-        {% include 'app/includes/_product.html' %}
-        </div>
-    </main> 
+    {% include 'reviews/includes/_review.html' %}
 {% endblock main %}
 
 {% block footer %}

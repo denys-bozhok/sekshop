@@ -3,11 +3,12 @@
 
 <!--* HEAD -->
 {% block title %}
-    Sections
+    Review
 {% endblock title %}
 
 {% block style %}
     <link rel="stylesheet" href="{% static 'app/app.css' %}">
+    <link rel="stylesheet" href="{% static 'reviews/reviews.css' %}">
 {% endblock style %}
 
 <!--* BODY -->
@@ -18,9 +19,11 @@
 
 {% block main %}
     <main class="main">   
-        <div class="content">
-        {% include 'app/includes/_product.html' %}
-        </div>
+
+        <h1>
+            Thank U for Review
+        </h1>
+
     </main> 
 {% endblock main %}
 
